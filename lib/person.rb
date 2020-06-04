@@ -14,16 +14,13 @@ class Person
     #Each instance of class Person should be able to remember their name
 
     def happiness=(happiness)
-        @happiness = happiness
-       
-        if happiness <= 0
-            happiness = 0
-            @happiness = happiness
-        elsif happiness >= 10
-            happiness = 10
-            @happiness = happiness    
-            #@happiness.between?(1, 10) 
-        end
+        if happiness > 10
+            @happiness = 10
+        elsif happiness < 0
+            @happiness = 0
+        else 
+            @happiness = happiness 
+        end 
     end 
 
     def happiness
@@ -31,15 +28,13 @@ class Person
     end 
 
     def hygiene=(hygiene)
-        @hygiene = hygiene
-        if hygiene <= 0
-            hygiene = 0
-            @hygiene = hygiene
-        elsif hygiene >= 10
-            hygiene = 10
-            @hygiene = hygiene    
-            #@happiness.between?(1, 10) 
-        end
+        if hygiene > 10
+            @hygiene = 10
+        elsif hygiene < 0
+            @hygiene = 0
+        else 
+            @hygiene = hygiene 
+        end 
     end 
 
     def hygiene
@@ -73,10 +68,20 @@ class Person
         return  'all about the benjamins'
     end 
 
+
+# The take_bath method should increment the person's hygiene points by four and return the string "♪ Rub-a-dub just relaxing in the tub ♫".
+    def take_bath
+        self.hygiene += 4
+        return "♪ Rub-a-dub just relaxing in the tub ♫"
+    end 
+
+
+
+
 end 
 
-# rob = Person.new("Rob", 25,11)
-# binding.pry
+#rob = Person.new("Rob", 25,11)
+ #binding.pry
 
 # rob.happiness = 11
 #puts rob
